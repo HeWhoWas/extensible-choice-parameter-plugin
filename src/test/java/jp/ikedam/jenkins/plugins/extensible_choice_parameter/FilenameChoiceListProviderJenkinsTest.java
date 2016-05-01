@@ -93,6 +93,7 @@ public class FilenameChoiceListProviderJenkinsTest
                     "Choice",
                     expected,
                     false,
+                    false,
                     ""
             )));
             j.submit(j.createWebClient().getPage(p, "configure").getFormByName("config"));
@@ -115,6 +116,7 @@ public class FilenameChoiceListProviderJenkinsTest
                     "Choice",
                     expected,
                     false,
+                    false,
                     ""
             )));
             j.submit(j.createWebClient().getPage(p, "configure").getFormByName("config"));
@@ -136,6 +138,7 @@ public class FilenameChoiceListProviderJenkinsTest
             p.addProperty(new ParametersDefinitionProperty(new ExtensibleChoiceParameterDefinition(
                     "Choice",
                     expected,
+                    false,
                     false,
                     ""
             )));
@@ -324,6 +327,7 @@ public class FilenameChoiceListProviderJenkinsTest
                         false,
                         FilenameChoiceListProvider.EmptyChoiceType.None
                 ),
+                false,
                 false,
                 ""
         )));

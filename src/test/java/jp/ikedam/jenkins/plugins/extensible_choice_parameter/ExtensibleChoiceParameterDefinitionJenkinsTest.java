@@ -74,7 +74,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
     
     private ExtensibleChoiceParameterDefinition.DescriptorImpl getDescriptor()
     {
-        return (ExtensibleChoiceParameterDefinition.DescriptorImpl)(new ExtensibleChoiceParameterDefinition("name", null, false, "")).getDescriptor();
+        return (ExtensibleChoiceParameterDefinition.DescriptorImpl)(new ExtensibleChoiceParameterDefinition("name", null, false, false, "")).getDescriptor();
     }
     
     /**
@@ -346,6 +346,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             provider,
                             true,
+                            false,
                             description
                     ),
                     value
@@ -360,6 +361,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     new ExtensibleChoiceParameterDefinition(
                             name,
                             provider,
+                            false,
                             false,
                             description
                     ),
@@ -376,6 +378,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             provider,
                             true,
+                            false,
                             description
                     ),
                     value
@@ -391,6 +394,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                         new ExtensibleChoiceParameterDefinition(
                                 name,
                                 provider,
+                                false,
                                 false,
                                 description
                         ),
@@ -413,6 +417,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             provider,
                             true,
+                            false,
                             description
                     ),
                     value
@@ -428,6 +433,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             new MockChoiceListProvider(new ArrayList<String>(0), null),
                             true,
+                            false,
                             description
                     ),
                     value
@@ -443,6 +449,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                         new ExtensibleChoiceParameterDefinition(
                                 name,
                                 new MockChoiceListProvider(new ArrayList<String>(0), null),
+                                false,
                                 false,
                                 description
                         ),
@@ -483,6 +490,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             null,
                             true,
+                            false,
                             description
                     ),
                     value
@@ -498,6 +506,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                         new ExtensibleChoiceParameterDefinition(
                                 name,
                                 null,
+                                false,
                                 false,
                                 description
                         ),
@@ -521,6 +530,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                             name,
                             new MockChoiceListProvider((List<String>)null, null),
                             true,
+                            false,
                             description
                     ),
                     value
@@ -536,6 +546,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                         new ExtensibleChoiceParameterDefinition(
                                 name,
                                 new MockChoiceListProvider((List<String>)null, null),
+                                false,
                                 false,
                                 description
                         ),
@@ -561,6 +572,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     "test",
                     provider,
                     true,
+                    false,
                     "description"
                     );
             FreeStyleProject job = j.createFreeStyleProject();
@@ -581,6 +593,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     "test",
                     provider,
                     false,
+                    false,
                     "description"
                     );
             FreeStyleProject job = j.createFreeStyleProject();
@@ -600,6 +613,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     "test",
                     provider,
                     true,
+                    false,
                     "description"
                     );
             FreeStyleProject job = j.createFreeStyleProject();
@@ -618,6 +632,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition def = new ExtensibleChoiceParameterDefinition(
                     "test",
                     provider,
+                    false,
                     false,
                     "description"
                     );
@@ -652,6 +667,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             String value = "value3";
@@ -663,6 +679,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -676,6 +693,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             String value = "someValue";
@@ -687,6 +705,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -705,6 +724,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             String value = "  a b\nc d e  ";
@@ -716,6 +736,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     null,
+                    false,
                     false,
                     description
             );
@@ -734,6 +755,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     null,
                     true,
+                    false,
                     description
             );
             String value = "anyValue";
@@ -745,6 +767,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
+                    false,
                     false,
                     description
             );
@@ -763,6 +786,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
                     true,
+                    false,
                     description
             );
             String value = "anyValue";
@@ -774,6 +798,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     new MockChoiceListProvider((List<String>)null, null),
+                    false,
                     false,
                     description
             );
@@ -792,6 +817,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider((List<String>)null, null),
                     true,
+                    false,
                     description
             );
             String value = "anyValue";
@@ -813,6 +839,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             assertEquals("Editable", new StringParameterValue(name, firstValue, description), target.getDefaultParameterValue());
@@ -823,6 +850,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -835,6 +863,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     null,
                     false,
+                    false,
                     description
             );
             assertEquals("provider is null and non-editable", null, target.getDefaultParameterValue());
@@ -846,6 +875,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     null,
                     true,
+                    false,
                     description
             );
             assertEquals("provider is null and editable", null, target.getDefaultParameterValue());
@@ -856,6 +886,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
+                    false,
                     false,
                     description
             );
@@ -868,6 +899,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
                     true,
+                    false,
                     description
             );
             assertEquals("no choice is provided and editable", null, target.getDefaultParameterValue());
@@ -878,6 +910,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     new MockChoiceListProvider((List<String>)null, null),
+                    false,
                     false,
                     description
             );
@@ -890,6 +923,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider((List<String>)null, null),
                     true,
+                    false,
                     description
             );
             assertEquals("provider returns null and editable", null, target.getDefaultParameterValue());
@@ -910,6 +944,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             assertEquals("Editable, in choices", new StringParameterValue(name, defaultChoice, description), target.getDefaultParameterValue());
@@ -922,6 +957,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -936,6 +972,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             assertEquals("Editable, in choices, the first", new StringParameterValue(name, defaultChoice, description), target.getDefaultParameterValue());
@@ -948,6 +985,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -962,6 +1000,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             assertEquals("Editable, in choices, the last", new StringParameterValue(name, defaultChoice, description), target.getDefaultParameterValue());
@@ -974,6 +1013,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -988,6 +1028,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     provider,
                     true,
+                    false,
                     description
             );
             assertEquals("Editable, in choices", new StringParameterValue(name, defaultChoice, description), target.getDefaultParameterValue());
@@ -1000,6 +1041,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     name,
                     provider,
+                    false,
                     false,
                     description
             );
@@ -1020,6 +1062,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
                     false,
+                    false,
                     description
             );
             assertEquals("no choice is provided and non-editable", null, target.getDefaultParameterValue());
@@ -1031,6 +1074,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                     name,
                     new MockChoiceListProvider(new ArrayList<String>(0), null),
                     true,
+                    false,
                     description
             );
             assertEquals("no choice is provided and editable", null, target.getDefaultParameterValue());
@@ -1099,6 +1143,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
                 "Choice",
                 new MockChoiceListProvider(Arrays.asList("value1", "value2"), null),
                 false,
+                false,
                 ""
         );
         
@@ -1122,6 +1167,7 @@ public class ExtensibleChoiceParameterDefinitionJenkinsTest
         ExtensibleChoiceParameterDefinition def = new ExtensibleChoiceParameterDefinition(
                 "Choice",
                 new MockChoiceListProvider(Arrays.asList("value1", "value2"), null),
+                false,
                 false,
                 ""
         );

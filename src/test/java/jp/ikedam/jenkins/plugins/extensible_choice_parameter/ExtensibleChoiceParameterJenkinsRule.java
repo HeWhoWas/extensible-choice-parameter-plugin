@@ -93,7 +93,7 @@ public class ExtensibleChoiceParameterJenkinsRule extends JenkinsRule
     }
     
     @Override
-    protected void after()
+    public void after() throws Exception
     {
         super.after();
         
@@ -137,7 +137,7 @@ public class ExtensibleChoiceParameterJenkinsRule extends JenkinsRule
     }
     
     @Override
-    protected <P extends Job> P configRoundtrip(P before) throws Exception
+    public <P extends Job> P configRoundtrip(P before) throws Exception
     {
         return super.configRoundtrip(before);
     }

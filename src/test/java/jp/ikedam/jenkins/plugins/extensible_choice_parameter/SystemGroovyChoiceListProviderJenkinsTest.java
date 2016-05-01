@@ -24,6 +24,8 @@
 package jp.ikedam.jenkins.plugins.extensible_choice_parameter;
 
 import static org.junit.Assert.*;
+
+import com.gargoylesoftware.htmlunit.html.DomElement;
 import hudson.cli.CLI;
 import hudson.model.FreeStyleProject;
 import hudson.model.ParametersDefinitionProperty;
@@ -307,13 +309,14 @@ public class SystemGroovyChoiceListProviderJenkinsTest
                 "test",
                 new SystemGroovyChoiceListProvider("[jenkins.rootDir.absolutePath, project.fullName]", null, true),
                 false,
+                false,
                 "test"
         )));
         
         WebClient wc = j.createAllow405WebClient();
         HtmlPage page = wc.getPage(p, "build");
         
-        List<HtmlElement> elements = page.getElementsByTagName("select");
+        List<DomElement> elements = page.getElementsByTagName("select");
         assertEquals(1, elements.size());
         assertTrue(elements.get(0) instanceof HtmlSelect);
         HtmlSelect sel = (HtmlSelect)elements.get(0);
@@ -331,6 +334,7 @@ public class SystemGroovyChoiceListProviderJenkinsTest
                 "test",
                 new SystemGroovyChoiceListProvider("return [(project != null)?project.fullName:\"none\"]", null, true),
                 false,
+                false,
                 "test"
         )));
         p.getBuildersList().add(ceb);
@@ -338,7 +342,7 @@ public class SystemGroovyChoiceListProviderJenkinsTest
         WebClient wc = j.createAllow405WebClient();
         HtmlPage page = wc.getPage(p, "build");
         
-        List<HtmlElement> elements = page.getElementsByTagName("select");
+        List<DomElement> elements = page.getElementsByTagName("select");
         assertEquals(1, elements.size());
         assertTrue(elements.get(0) instanceof HtmlSelect);
         HtmlSelect sel = (HtmlSelect)elements.get(0);

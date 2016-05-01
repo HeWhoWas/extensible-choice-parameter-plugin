@@ -295,6 +295,7 @@ public class TextareaChoiceListProviderJenkinsTest
                 varname,
                 provider,
                 true,
+                false,
                 "description"
                 );
         FreeStyleProject job = j.createFreeStyleProject();
@@ -343,6 +344,7 @@ public class TextareaChoiceListProviderJenkinsTest
                 varname,
                 provider,
                 true,
+                false,
                 "description"
                 );
         FreeStyleProject job = j.createFreeStyleProject();
@@ -395,6 +397,7 @@ public class TextareaChoiceListProviderJenkinsTest
                 varname,
                 provider,
                 true,
+                false,
                 "description"
                 );
         FreeStyleProject job = j.createFreeStyleProject();
@@ -447,6 +450,7 @@ public class TextareaChoiceListProviderJenkinsTest
                 varname,
                 provider,
                 true,
+                false,
                 "description"
                 );
         FreeStyleProject job = j.createFreeStyleProject();
@@ -499,6 +503,7 @@ public class TextareaChoiceListProviderJenkinsTest
                 varname,
                 provider,
                 true,
+                false,
                 "description"
                 );
         FreeStyleProject job = j.createFreeStyleProject();

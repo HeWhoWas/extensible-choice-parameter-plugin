@@ -41,6 +41,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     null,
                     false,
+                    false,
                     "Some text"
             );
             assertEquals("Simple value", "name", target.getName());
@@ -50,6 +51,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     "  name ",
                     null,
+                    false,
                     false,
                     "Some text"
             );
@@ -66,6 +68,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     null,
                     null,
                     false,
+                    false,
                     "Some text"
             );
             assertEquals("null", null, target.getName());
@@ -76,6 +79,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "",
                     null,
                     false,
+                    false,
                     "Some text"
             );
             assertEquals("Empty", "", target.getName());
@@ -85,6 +89,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     "  ",
                     null,
+                    false,
                     false,
                     "Some text"
             );
@@ -102,6 +107,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     null,
                     false,
+                    false,
                     description
             );
             assertEquals("Simple value", description, target.getDescription());
@@ -113,6 +119,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     "name",
                     null,
+                    false,
                     false,
                     description
             );
@@ -126,6 +133,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     null,
                     false,
+                    false,
                     description
             );
             assertEquals("null", description, target.getDescription());
@@ -137,6 +145,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     "name",
                     null,
+                    false,
                     false,
                     description
             );
@@ -155,6 +164,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     provider,
                     false,
+                    false,
                     "Some Text"
             );
             assertEquals("Simple value", provider, target.getChoiceListProvider());
@@ -166,6 +176,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
                     "name",
                     provider,
+                    false,
                     false,
                     "Some Text"
             );
@@ -183,6 +194,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     null,
                     editable,
+                    false,
                     "Some Text"
             );
             assertEquals("editable", editable, target.isEditable());
@@ -195,6 +207,7 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
                     "name",
                     null,
                     editable,
+                    false,
                     "Some Text"
             );
             assertEquals("noneditable", editable, target.isEditable());
