@@ -37,6 +37,7 @@ THE SOFTWARE.
                     field="value"
                     items="${it.choiceList}"
                     editable="${it.editable}"
+                    fuzzy="${it.fuzzy}"
                 />
             </j:scope>
         </div>

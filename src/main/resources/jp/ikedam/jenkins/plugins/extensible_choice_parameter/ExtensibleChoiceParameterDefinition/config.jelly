@@ -35,4 +35,7 @@ THE SOFTWARE.
     <f:entry title="${%Editable}" field="editable">
         <f:checkbox />
     </f:entry>
+    <f:entry title="${%Fuzzy}" field="fuzzy">
+        <f:checkbox />
+    </f:entry>
 </j:jelly>

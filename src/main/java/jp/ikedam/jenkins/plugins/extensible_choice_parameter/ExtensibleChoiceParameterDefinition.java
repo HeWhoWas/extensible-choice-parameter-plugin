@@ -167,6 +167,7 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
                     formData.getString("name"),
                     bindJSONWithDescriptor(req, formData, "choiceListProvider", ChoiceListProvider.class),
                     formData.getBoolean("editable"),
+                    formData.getBoolean("fuzzy"),
                     formData.getString("description")
             );
         }
@@ -297,17 +298,29 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
             return ((DescriptorImpl)context).isProviderEnabled(descriptor);
         }
     }
-    
+
     private boolean editable = false;
+
+    /**
+     * Is this parameter value can be set to a value not in the choices?
+     *
+     * @return whether this parameter is editable.
+     */
+    public boolean isEditable()
+    {
+        return editable;
+    }
+
+    private boolean fuzzy = false;
     
     /**
      * Is this parameter value can be set to a value not in the choices?
      * 
      * @return whether this parameter is editable.
      */
-    public boolean isEditable()
+    public boolean isFuzzy()
     {
-        return editable;
+        return fuzzy;
     }
     
     private ChoiceListProvider choiceListProvider = null;
@@ -369,10 +382,11 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
      * @param name the name of this parameter (used as a variable name).
      * @param choiceListProvider the choice provider
      * @param editable whether this parameter can be a value not in choices.
+     * @param fuzzy whether this parameter will allow fuzzy matching.
      * @param description the description of this parameter. Used only for the convenience of users.
      */
     @DataBoundConstructor
-    public ExtensibleChoiceParameterDefinition(String name, ChoiceListProvider choiceListProvider, boolean editable, String description)
+    public ExtensibleChoiceParameterDefinition(String name, ChoiceListProvider choiceListProvider, boolean editable, boolean fuzzy, String description)
     {
         // There seems no way to forbid invalid values to be submitted.
         // SimpleParameterDefinition seems not to trim name parameter, so trim here.
@@ -380,6 +394,7 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
         
         this.choiceListProvider = choiceListProvider;
         this.editable = editable;
+        this.fuzzy = fuzzy;
     }
     
     /**
