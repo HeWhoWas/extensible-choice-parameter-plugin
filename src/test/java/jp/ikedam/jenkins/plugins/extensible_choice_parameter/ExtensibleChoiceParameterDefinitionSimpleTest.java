@@ -213,4 +213,34 @@ public class ExtensibleChoiceParameterDefinitionSimpleTest
             assertEquals("noneditable", editable, target.isEditable());
         }
     }
+
+    @Test
+    public void testExtensibleChoiceParameterDefinition_fuzzy()
+    {
+        // fuzzy
+        {
+            boolean fuzzy = true;
+            ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
+                    "name",
+                    null,
+                    false,
+                    fuzzy,
+                    "Some Text"
+            );
+            assertEquals("fuzzy", fuzzy, target.isFuzzy());
+        }
+
+        // nonfuzzy
+        {
+            boolean fuzzy = false;
+            ExtensibleChoiceParameterDefinition target = new ExtensibleChoiceParameterDefinition(
+                    "name",
+                    null,
+                    false,
+                    fuzzy,
+                    "Some Text"
+            );
+            assertEquals("nonfuzzy", fuzzy, target.isFuzzy());
+        }
+    }
 }
