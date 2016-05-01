@@ -282,6 +282,14 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
             
             return FormValidation.ok();
         }
+
+        public FormValidation doCheckEditable(@QueryParameter boolean value, @QueryParameter boolean fuzzy) {
+            if (value && fuzzy)
+                return FormValidation.error(Messages.ExtensibleChoiceParameterDefinition_Editable_Fuzzy_invalid());
+            else
+                return FormValidation.ok();
+        }
+
     }
     
     @Extension
@@ -312,17 +320,17 @@ public class ExtensibleChoiceParameterDefinition extends SimpleParameterDefiniti
     }
 
     private boolean fuzzy = false;
-    
+
     /**
-     * Is this parameter value can be set to a value not in the choices?
-     * 
-     * @return whether this parameter is editable.
+     * Does this parameter use fuzzy matching?
+     *
+     * @return whether this parameter is fuzzy searchable.
      */
     public boolean isFuzzy()
     {
         return fuzzy;
     }
-    
+
     private ChoiceListProvider choiceListProvider = null;
     
     /**
